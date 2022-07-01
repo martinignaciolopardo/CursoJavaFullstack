@@ -17,6 +17,7 @@ async function login(){
         body: JSON.stringify(data)
    });
    const answer = await request.text();
+
    if(answer != 'fail'){
       localStorage.token = answer;
       localStorage.email = data.email;

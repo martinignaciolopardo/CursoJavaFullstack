@@ -38,12 +38,10 @@ public class UserDaoImp implements UsuarioDao{
       List<User> resultCheck = entityManager.createQuery(query)
                                              .setParameter("email", user.getEmail())
                                              .getResultList();
-
       if(resultCheck.isEmpty()){
          return null;
       }
       String passwordHashed = resultCheck.get(0).getPassword();
-
       Argon2 argon = Argon2Factory.create(Argon2Factory.Argon2Types.ARGON2id);
       if(argon.verify(passwordHashed, user.getPassword())){
          return resultCheck.get(0);
