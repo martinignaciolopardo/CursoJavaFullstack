@@ -1,0 +1,7 @@
+{[income statment accounts].[Net Income],{[income statment accounts].[Net Income].children}}
+
+{[income statment accounts].[Net Income],drilldownmember([income statment accounts].[Net Income].children, {[income statment accounts].[Net Income].children})}
+
+=CONCATENATE("{[income statment accounts].[", $C$14, "],drilldownmember([income statment accounts].[", $C$14, "].children, {[income statment accounts].[", $C$14, "].children})}")
+
+
